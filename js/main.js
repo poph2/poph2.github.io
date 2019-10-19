@@ -1,14 +1,17 @@
 var scene, camera, renderer;
 
-//var WIDTH  = window.innerWidth;
-//var HEIGHT = window.innerHeight;
+var container = document.querySelector("#container");
 
-var SPEED = 0.01;
-
-container = document.querySelector( '#container' );
+// var WIDTH  = window.innerWidth;
+// var HEIGHT = window.innerHeight;
 
 var WIDTH  = container.clientWidth;
 var HEIGHT = container.clientHeight;
+
+console.log(container.clientWidth);
+console.log(container.clientHeight);
+
+var SPEED = 0.01;
 
 function init() {
     scene = new THREE.Scene();
@@ -17,7 +20,7 @@ function init() {
     initCamera();
     initRenderer();
 
-    container.appendChild(renderer.domElement);
+    document.body.appendChild(renderer.domElement);
 }
 
 function initCamera() {
@@ -28,7 +31,7 @@ function initCamera() {
 
 function initRenderer() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize();
+    renderer.setSize(WIDTH, HEIGHT);
 }
 
 function initCube() {
