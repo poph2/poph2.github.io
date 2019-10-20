@@ -1,0 +1,15 @@
+
+
+body {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
