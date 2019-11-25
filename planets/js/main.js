@@ -8,11 +8,16 @@
 // var moon = new Moon();
 // var earth = new Earth();
 
-threeWorld = new ThreeWorld();
+var scene = new THREE.Scene();
+
+var moon = new Moon(scene);
+// var earth = new Earth(scene);
+
+threeWorld = new ThreeWorld(scene, moon);
 
 function render() {
     requestAnimationFrame(render);
-    threeWorld.render();
+    threeWorld.renderWorld();
 }
 
 render();
